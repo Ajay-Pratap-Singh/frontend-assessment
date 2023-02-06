@@ -1,38 +1,54 @@
 .App {
-  text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input,
+input:focus {
+    text-align: center;
+    border: none;
+    width: 98%;
+    outline: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.action,
+input[type='button'] {
+    cursor: pointer;
+    font-weight: bold;
+    background-color: white;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input[type='button']:not([disabled]):hover {
+    color: blue;
 }
-
-.App-link {
-  color: #61dafb;
+#users-table {
+    width: 370px;
+    margin-right: 8px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#users-table td {
+    cursor: pointer;
+}
+#hobbies-table {
+    flex-grow: 1;
+}
+.active-user {
+    border: 2px solid blue;
+}
+@media (max-width: 890px) {
+    .App {
+        align-items: center;
+        flex-direction: column;
+    }
+    #users-table,
+    #hobbies-table {
+        margin: 8px;
+        width: 90vw;
+    }
 }
